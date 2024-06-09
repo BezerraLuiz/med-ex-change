@@ -1,10 +1,14 @@
 # MedExChange
 
+#Descrição
 Um dos problemas dos pacientes que fazem muitos exames durante o ano, é carregar bolsas cheias de arquivos e exames ao consultório.  
 Meu sistema tem como objetivo conectar o usuário (paciente) com o hospital, para a coleta do exame e poder também fazer uma conexão com o profissional responsável para fazer a entrega dos exames, assim acabando com o desafio/dificuldade de ficar encarregador de levar exames na mão quando for no consultório.
 
 # Índice
-(Índice será atualizado ao decorrer da construção do projeto)
+- Ferramentas utilizadas;
+- Instalação;
+- Utilização;
+- Contato;
 
 # Ferramentas utilizadas
 (Utilizadas até o momento)
