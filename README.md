@@ -5,10 +5,10 @@ Um dos problemas dos pacientes que fazem muitos exames durante o ano, é carrega
 Meu sistema tem como objetivo conectar o usuário (paciente) com o hospital, para a coleta do exame e poder também fazer uma conexão com o profissional responsável para fazer a entrega dos exames, assim acabando com o desafio/dificuldade de ficar encarregador de levar exames na mão quando for no consultório.
 
 # Índice
-- Ferramentas utilizadas;
-- Instalação;
-- Utilização;
-- Contato;
+- [Ferramentas utilizadas](#ferramentas-utilizadas)
+- [Instalação](#instalação)
+- [Utilização](#utilização)
+- [Contato](#contato)
 
 # Ferramentas utilizadas
 (Utilizadas até o momento)
