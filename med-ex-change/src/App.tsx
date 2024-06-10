@@ -1,13 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import LoginForm from './Components/LoginForm'
+import LoginForm from './Components/login-page/LoginForm'
+import ImgLogin from './Components/login-page/ImgLogin'
 
 function App() {
   
   return (
     <>
+      <ImgLogin/>
       <LoginForm/>
     </>
   )
