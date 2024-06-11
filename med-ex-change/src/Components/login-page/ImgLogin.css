@@ -23,20 +23,6 @@
   display: none;
 }
 
-footer {
-  margin: 10px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-
-p {
-  color: #1D5C99;
-  font-weight: 600;
-  font-size: 13px;
-  margin-left: 30px;
-}
-
 @media screen and (max-width:600px) {
   #left-background {
     display: none
@@ -56,12 +42,5 @@ p {
 
   #logo {
     display: block;
-  }
-
-  p {
-    color: white;
-    font-weight: 600;
-    font-size: 13px;
-    margin-left: 30px;
   }
 }

@@ -1,0 +1,14 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Google Fonts */
+.jetbrains-mono {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}

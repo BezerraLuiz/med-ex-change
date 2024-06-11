@@ -22,13 +22,6 @@ body {
   align-items: center;
 }
 
-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 form {
   display: flex;
   flex-direction: column;
