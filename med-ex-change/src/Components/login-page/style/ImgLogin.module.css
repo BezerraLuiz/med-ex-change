@@ -1,4 +1,4 @@
-#left-background {
+#left_background {
   position: absolute;
   left: 0;
   top: 0;
@@ -11,7 +11,7 @@
   display: none;
 }
 
-#img-login {
+#img_login {
   position: absolute;
   left: 0;
   top: 0;
@@ -36,7 +36,7 @@
     margin-bottom: 60px;
   }
 
-  #img-login {
+  #img_login {
     display: none;
   }
 

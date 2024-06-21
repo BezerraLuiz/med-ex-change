@@ -1,12 +1,12 @@
-import './Footer.css'
+import styles from './style/Footer.module.css'
 
 function Footer() {
 
   return (
     <>
-      <footer>
-        <p className='footer-text'>Coded by Luiz Antônio Ponciano Costa Bezerra</p>
-        <p className='footer-text'>MedExChange | Conectando Saúde</p>
+      <footer id={styles.footer_principal}>
+        <p className={styles.footer_text}>Coded by Luiz Antônio Ponciano Costa Bezerra</p>
+        <p className={styles.footer_text}>MedExChange | Conectando Saúde</p>
       </footer>
     </>
   )

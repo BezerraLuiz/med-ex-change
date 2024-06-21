@@ -1,38 +1,33 @@
-body {
+#background {
   background-color: #1E90FF;
-  margin: 0;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.main-container {
+#main_container {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   width: 100%;
   height: 100%;
-  padding-left: 50vw; /* Ajuste conforme necessário */
+  padding-left: 62.5vw; /* Ajuste conforme necessário */
 }
 
-#container-login {
+#container_login {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-form {
+#form_login {
   display: flex;
   flex-direction: column;
 }
 
-form label {
+#form_login label {
   color: white;
   margin-top: 15px;
 }
 
-form input {
+#form_login input {
   background-color: #1D5C99;
   color: white;
   border-radius: 5px;
@@ -43,11 +38,11 @@ form input {
   margin-top: 3px;
 }
 
-form input::placeholder {
+#form_login input::placeholder {
   color: rgba(255, 255, 255, 0.55);
 }
 
-#container-check {
+#container_check {
   display: flex;
   align-self: flex-start;
   flex-direction: row;
@@ -59,11 +54,11 @@ form input::placeholder {
   font-weight: normal;
 }
 
-#container-check input[type="checkbox"] {
+#container_check input[type="checkbox"] {
   display: none; /* Esconde o checkbox padrão */
 }
 
-#container-check label::before {
+#container_check label::before {
   content: '';
   display: inline-block;
   width: 14px;
@@ -76,7 +71,7 @@ form input::placeholder {
   cursor: pointer;
 }
 
-#container-check input[type="checkbox"]:checked + label::before {
+#container_check input[type="checkbox"]:checked + label::before {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,12 +86,13 @@ form input::placeholder {
   cursor: pointer;
 }
 
-a {
+.ref_rotas {
   color: white;
   font-size: 14px;
+  text-decoration: none;
 }
 
-button {
+#btn_entrar {
   color: white;
   font-size: 18px;
   font-weight: 500;
@@ -109,7 +105,7 @@ button {
   cursor: pointer;
 }
 
-#container-register {
+#container_register {
   display: flex;
   flex-direction: row;
   align-self: flex-start;
@@ -122,10 +118,6 @@ button {
 }
 
 @media screen and (max-width:600px) {
-  body {
-    background-color: #1E90FF;
-  }
-
   .main-container {
     display: flex;
     justify-content: center;

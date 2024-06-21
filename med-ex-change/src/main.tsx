@@ -3,16 +3,29 @@ import ReactDOM from 'react-dom/client';
 import './App.css';
 import App from './App';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Register from './Routes/Register';
+import Registrar from './Routes/Registrar';
+import LoginForm from './Components/login-page/LoginForm';
+import ImgLogin from './Components/login-page/ImgLogin';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App/>
-  },
-  {
-    path: '/register',
-    element: <Register/>
+    element: <App/>,
+    children: [
+      {
+        index: true,
+        element: (
+          <>
+            <LoginForm />
+            <ImgLogin />
+          </>
+        ),
+      },
+      {
+        path: 'registrar',
+        element: <Registrar />,
+      },
+    ],
   },
 ]);
 

@@ -1,0 +1,53 @@
+#background {
+  background-color: #1E90FF;
+  height: 100vh;
+}
+
+#titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 180px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+#form_first, #form_second { /* Primeira e segunda coluna do form */
+  margin-top: 20px;
+}
+
+#form_third { /* Terceira coluna do form. */
+  display: flex;
+  flex-direction: column;
+}
+
+.form_register {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form_register input {
+  background-color: #1D5C99;
+  color: white;
+  border-radius: 5px;
+  border: solid 0px;
+  width: 400px;
+  height: 40px;
+  padding: 10px;
+  margin-top: 3px;
+}
+
+.form_register input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.form_register label {
+  color: white;
+  margin-top: 15px;
+}
