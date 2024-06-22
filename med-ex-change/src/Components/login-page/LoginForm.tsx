@@ -17,8 +17,8 @@ function LoginForm() {
             </form>
             <div id={styles.container_check}>
               <input type="checkbox" id="check"/>
-              <label id={styles.checkbox} htmlFor="check">Lembrar senha</label>
-              <a className={styles.ref_rotas} href="">Esqueceu a senha?</a>
+              <label htmlFor="check">Lembrar senha</label>
+              <a className={styles.ref_rotas} href=""><Link className={styles.sublinhado} style={{ color: 'white' }} to={`/`}>Esqueceu a senha?</Link></a>
             </div>
             <button id={styles.btn_entrar} >Entrar</button>
             <div id={styles.container_register}>

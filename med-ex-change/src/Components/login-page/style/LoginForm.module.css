@@ -105,6 +105,10 @@
   cursor: pointer;
 }
 
+#btn_entrar:hover {
+  background-color: #ce4e38;
+}
+
 #container_register {
   display: flex;
   flex-direction: row;
@@ -115,6 +119,14 @@
   font-style: normal;
   font-weight: normal;
   margin-top: 15px;
+}
+
+.sublinhado {
+  text-decoration: none;
+}
+
+.sublinhado:hover {
+  text-decoration: underline;
 }
 
 @media screen and (max-width:600px) {

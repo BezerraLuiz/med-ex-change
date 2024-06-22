@@ -6,6 +6,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Registrar from './Routes/Registrar';
 import LoginForm from './Components/login-page/LoginForm';
 import ImgLogin from './Components/login-page/ImgLogin';
+import Termos from './Components/Termos';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,12 @@ const router = createBrowserRouter([
       {
         path: 'registrar',
         element: <Registrar />,
+        children: [
+          {
+            path: 'termos',
+            element: <Termos/>,
+          }
+        ]
       },
     ],
   },

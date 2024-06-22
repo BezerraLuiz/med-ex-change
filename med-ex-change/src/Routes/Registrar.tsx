@@ -1,97 +1,46 @@
-import { useState, ChangeEvent } from 'react';
+import { useState } from 'react';
 import { AsYouType } from "libphonenumber-js"; // Importando a função format da biblioteca libphonenumber-js
 import styles from "./style/Registrar.module.css";
+import { Link, Outlet } from 'react-router-dom';
 // import { Link } from "react-router-dom";
 
 function Registrar() {
   const [cpf, setCpf] = useState("");
 
   // Função para formatar o CPF conforme o usuário digita
-  const handleCpfChange = (event: { target: { value: any } }) => {
-    let cpfValue = event.target.value;
+  const formatarCPF = (event: { target: { value: any } }) => {
+    let cpf = event.target.value;
     // Remove todos os caracteres não numéricos
-    cpfValue = cpfValue.replace(/\D/g, "");
+    cpf = cpf.replace(/\D/g, "");
     // Insere os pontos e traço conforme o usuário digita
-    cpfValue = cpfValue.replace(/(\d{3})(\d)/, "$1.$2");
-    cpfValue = cpfValue.replace(/(\d{3})(\d)/, "$1.$2");
-    cpfValue = cpfValue.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-    setCpf(cpfValue);
+    cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+    cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+    cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    setCpf(cpf);
   };
 
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [telefone, setTelefone] = useState("");
 
   // Função para formatar o número de telefone conforme o usuário digita
-  const handlePhoneNumberChange = (event: { target: { value: any } }) => {
-    let phoneNumberValue = event.target.value;
+  const formatarTelefone = (event: { target: { value: any } }) => {
+    let numeroTelefone = event.target.value;
     // Remove todos os caracteres não numéricos
-    phoneNumberValue = phoneNumberValue.replace(/\D/g, "");
+    numeroTelefone = numeroTelefone.replace(/\D/g, "");
 
     try {
       // Formata o número de telefone no formato nacional brasileiro
-      const formatter = new AsYouType("BR");
-      const formattedPhoneNumber = formatter.input(phoneNumberValue);
-      setPhoneNumber(formattedPhoneNumber); // Atualiza o estado com o número formatado
+      const ddd = new AsYouType("BR");
+      const telefoneFormatado = ddd.input(numeroTelefone);
+      setTelefone(telefoneFormatado); // Atualiza o estado com o número formatado
     } catch (error) {
       console.error("Erro ao formatar o número de telefone:", error);
-      setPhoneNumber(phoneNumberValue); // Mantém o número sem formatação em caso de erro
+      setTelefone(numeroTelefone); // Mantém o número sem formatação em caso de erro
     }
   };
 
-  const [displayRed, setDisplayRed] = useState<boolean>(false);
-  const [displayOrg, setDisplayOrg] = useState<boolean>(false);
-  const [displayYlw, setDisplayYlw] = useState<boolean>(false);
-  const [displayBlue, setDisplayBlue] = useState<boolean>(false);
-  const [displayGreen, setDisplayGreen] = useState<boolean>(false);
-
-  const checkPassword = (event: ChangeEvent<HTMLInputElement>) => {
-      const passwordValue: string = event.target.value;
-
-        // Verifica tamanho da senha
-        if (passwordValue.length <= 3 && passwordValue.length >= 1) {
-            setDisplayRed(true);
-        } else {
-            setDisplayRed(false);
-        }
-
-        // Verifica se a senha contém letras minúsculas
-        if (/[a-z]/.test(passwordValue) && passwordValue.length > 3) {
-            setDisplayRed(true);
-            setDisplayOrg(true);
-        } else {
-            setDisplayOrg(false);
-        }
-
-        // Verifica se a senha contém letras maiúsculas
-        if (/[a-z]/.test(passwordValue) && /[A-Z]/.test(passwordValue) && passwordValue.length > 3) {
-            setDisplayRed(true);
-            setDisplayOrg(true);
-            setDisplayYlw(true);
-        } else {
-            setDisplayYlw(false);
-        }
-
-        // Verifica se a senha contém letras maiúsculas
-        if (/[a-z]/.test(passwordValue) && /[A-Z]/.test(passwordValue) && /[0-9]/.test(passwordValue) && passwordValue.length > 5) {
-            setDisplayRed(true);
-            setDisplayOrg(true);
-            setDisplayBlue(true);
-        } else {
-            setDisplayBlue(false);
-        }
-
-        // Verifica se a senha contém letras maiúsculas
-        if (/[^A-Za-z0-9]/.test(passwordValue) && /[a-z]/.test(passwordValue) && /[A-Z]/.test(passwordValue) && /[0-9]/.test(passwordValue) && passwordValue.length >= 8) {
-          setDisplayRed(true);
-          setDisplayOrg(true);
-          setDisplayBlue(true);
-          setDisplayGreen(true);
-        } else {
-          setDisplayGreen(false);
-        }
-  }
-
   return (
     <>
+      <Outlet/>
       <div id={styles.background}>
         <div id={styles.titulo}>
           <h1 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: "white" }}>REGISTRAR</h1>
@@ -114,16 +63,16 @@ function Registrar() {
                 placeholder="___.___.___-__"
                 value={cpf}
                 maxLength={14} // Limita a quantidade de caracteres
-                onChange={handleCpfChange}
+                onChange={formatarCPF}
               />
               <label htmlFor="phoneNumber">Número de Telefone</label>
               <input
                 type="text"
                 id="phoneNumber"
                 placeholder="(00) 00000-0000"
-                value={phoneNumber}
+                value={telefone}
                 maxLength={15} // Limita a quantidade de caracteres
-                onChange={handlePhoneNumberChange}
+                onChange={formatarTelefone}
               />
             </form>
           </div>
@@ -131,12 +80,22 @@ function Registrar() {
         <div className={styles.container}>
           <form className={styles.form_register} id={styles.form_third} autoComplete="off" action="">
             <label htmlFor="password">Senha</label>
-            <input type="password" onChange={checkPassword} placeholder="Senha@123" />
+            <input type="password" placeholder="Senha@123" />
           </form>
           <form className={styles.form_register} autoComplete="off" action="">
             <label htmlFor="password" id="password">Confirmar Senha </label>
             <input type="password"/>
           </form>
+        </div>
+        <div className={styles.container} id={styles.container_check}>
+          <form id={styles.form_container} action="">
+            <input type="checkbox" id='check' />
+            <label htmlFor="check"><Link style={{ color: 'white', fontSize: '14px' }} to={`termos`}>Eu concordo com os Termos de Uso e a Política de Privacidade.</Link></label>
+          </form>
+        </div>
+        <div className={styles.container} style={{ marginTop: '15px' }}>
+        <Link style={{ color: 'white', textDecoration: 'none'}} to={`/`}><button className={styles.btn_registrar_voltar}>Criar Conta</button></Link>
+        <Link style={{ color: 'white', textDecoration: 'none'}} to={`/`}><button className={styles.btn_registrar_voltar}>Cancelar</button></Link>
         </div>
       </div>
     </>
