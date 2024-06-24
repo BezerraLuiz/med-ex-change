@@ -7,6 +7,8 @@ import Registrar from './Routes/Registrar';
 import LoginForm from './Components/login-page/LoginForm';
 import ImgLogin from './Components/login-page/ImgLogin';
 import Termos from './Components/Termos';
+import EsqueceuSenha from './Routes/EsqueceuSenha';
+import RedefinirSenha from './Routes/RedefinirSenha';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
           }
         ]
       },
+      {
+        path: 'esqueceu-a-senha',
+        element: <EsqueceuSenha />,
+      },
+      {
+        path: 'redefinir-senha',
+        element: <RedefinirSenha/>
+      }
     ],
   },
 ]);

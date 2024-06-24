@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { AsYouType } from "libphonenumber-js"; // Importando a função format da biblioteca libphonenumber-js
 import styles from "./style/Registrar.module.css";
 import { Link, Outlet } from 'react-router-dom';
-// import { Link } from "react-router-dom";
+import logo from '../assets/logo-branca.png'
 
 function Registrar() {
   const [cpf, setCpf] = useState("");
@@ -42,8 +42,11 @@ function Registrar() {
     <>
       <Outlet/>
       <div id={styles.background}>
-        <div id={styles.titulo}>
-          <h1 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: "white" }}>REGISTRAR</h1>
+        <div id={styles.container_cabecalho}>
+          <div><img src={logo} alt="logo" /></div>
+          <div id={styles.titulo}>
+            <h1 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: "white" }}>REGISTRAR</h1>
+          </div>
         </div>
         <div className={styles.container}>
           <div>

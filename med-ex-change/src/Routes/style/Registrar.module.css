@@ -3,11 +3,20 @@
   height: 100vh;
 }
 
+#container_cabecalho {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+  gap: 375px;
+}
+
 #titulo {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10%;
+  padding-top: 100px;
+  margin-right: 600px;
 }
 
 .container {
@@ -17,9 +26,8 @@
   gap: 50px;
 }
 
-#form_first, #form_second { /* Primeira e segunda coluna do form */
-  margin-top: 20px;
-}
+/* #form_first, #form_second { Primeira e segunda coluna do form 
+} */
 
 #form_third { /* Terceira coluna do form. */
   display: flex;
